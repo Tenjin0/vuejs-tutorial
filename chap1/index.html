@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="vue-app">
+        <div>
+            <h1>Datas</h1>
+            <p>{{name}}</p>
+            <p>{{greet(name)}}</p>
+        </div>
+        <div>
+            <h1>Events</h1>
+            <span>{{age}} {{addToAge}}</span>
+            <p>
+                <button data-inc="1" v-on:click="add(1, $event)"> Add a year</button>
+                <button @click="sub(1, $event)"> Substract a year</button>
+                <button data-inc="1" v-on:dblclick="add(10, $event)"> Add 10 years</button>
+                <button @dblclick="sub(10, $event)"> Substract 10 years</button>
+            </p>
+            <p>
+                <a v-on:click.prevent="click" href="http://www.google.com" target="_blank" rel="noopener noreferrer">Link</a>
+            </p>
+
+            <p>
+                <h1>Keyboard event</h1>
+                <label for="name">{{character}}</label>
+                <input id="name" type="text" v-model="character">
+            </p>
+        </div>
+        <div v-on:click="available = !available" v-bind:class="{available:available}">
+            <h1>Dynamic class</h1>
+            <span>
+                Test
+            </span>
+        </div>
+
+        <div>
+            <h1>Conditionnals</h1>
+            <Button v-on:click="toggle=!toggle">Toggle</Button>
+            <p v-if="toggle">
+                IF toogle
+            </p>
+            <p v-else-if="!toggle">
+                IF not toogle
+            </p>
+            <p v-show="age>=30">
+                show 
+            </p>
+        </div>
+
+        <div>
+            <h1>Loop</h1>
+            <label for="character">Character: </label>
+            <input id="character" type="text" v-model="character">
+            <button v-on:click="addCharacter"type="button" :disabled="character.length < 3">Add</button>
+
+            <p>
+                <ul>
+                    <li v-for="(char, index) in characters">
+                        <span>{{char}}</span><button v-on:click.once="deleteCharacter(index)">-</button>
+                    </li>
+                </ul>
+            </p>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <link
+        href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="app.css" media="screen" />
+</body>
+</html>

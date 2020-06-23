@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body
+        class="bg-gray-200 flex content-center h-full justify-center items-center"
+    >
+        <div class="bg-white shadow-lg" id="vue-app">
+            <h1 class="text-lg text-align">Punch Bag</h1>
+            <div id="bag" v-bind:class="{burst: hasEnded}"></div>
+            <div id="bag-health">
+                <div v-bind:style="{width: health + '%'}"></div>
+            </div>
+            <div id="actions">
+                <button id="btn-punch" v-on:click="punch" class="btn btn-blue">
+                    Punch
+                </button>
+                <button id="btn-restart" v-on:click="restart">Restart</button>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="app.css" media="screen" />
+    </body>
+</html>
