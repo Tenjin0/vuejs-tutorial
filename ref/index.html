@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="vue-app">
+        <h1>Refs</h1>
+        <p>
+            <input type="text" ref="input" />
+            <button v-on:click="readRefs">Submit</button>
+        <div ref="div"></div>
+        </p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="app.css" media="screen" />
+</body>
+
+</html>
